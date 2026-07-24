@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetitDCA - プチ・暗号資産DCAシミュレーター</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🪙 PetitDCA</h1>
+      <p class="subtitle">プチ・暗号資産DCA（積立投資）シミュレーター</p>
+    </header>
+
+    <main>
+      <!-- 入力フォームエリア -->
+      <section class="card input-section">
+        <h2>⚙️ 積立条件の設定</h2>
+        <div class="form-group">
+          <label for="dailyAmount">1日の購入額 (円):</label>
+          <input type="number" id="dailyAmount" value="100" min="1">
+        </div>
+        <div class="form-group">
+          <label for="days">積立日数 (日):</label>
+          <input type="number" id="days" value="365" min="1">
+        </div>
+        <div class="form-group">
+          <label for="coinPrice">購入時の平均コイン価格 (円):</label>
+          <input type="number" id="coinPrice" value="10000000" min="1">
+        </div>
+        <button id="calcBtn" class="btn-primary">シミュレーション実行</button>
+      </section>
+
+      <!-- 結果表示エリア -->
+      <section class="card result-section">
+        <h2>📊 シミュレーション結果</h2>
+        <div class="result-grid">
+          <div class="result-item">
+            <span class="result-label">総投資額</span>
+            <span id="totalInvestment" class="result-value">¥0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">推定獲得数量</span>
+            <span id="totalCrypto" class="result-value">0 BTC</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
