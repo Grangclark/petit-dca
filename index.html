@@ -29,6 +29,13 @@
           <label for="coinPrice">購入時の平均コイン価格 (円):</label>
           <input type="number" id="coinPrice" value="10000000" min="1">
         </div>
+
+        <!-- 👑【今日の一撃】現在の価格入力を追加 -->
+        <div class="form-group">
+          <label for="currentCoinPrice">現在のコイン価格 (円):</label>
+          <input type="number" id="currentCoinPrice" value="15000000" min="1">
+        </div>
+
         <button id="calcBtn" class="btn-primary">シミュレーション実行</button>
       </section>
 
@@ -43,6 +50,16 @@
           <div class="result-item">
             <span class="result-label">推定獲得数量</span>
             <span id="totalCrypto" class="result-value">0 BTC</span>
+          </div>
+
+          <!-- 👑【今日の一撃】評価額と損益の表示枠を追加 -->
+          <div class="result-item">
+            <span class="result-label">現在の評価額</span>
+            <span id="currentValuation" class="result-value">¥0</span>
+          </div>
+          <div class="result-item">
+            <span class="result-label">評価損益 (収益率)</span>
+            <span id="profitAndLoss" class="result-value">¥0 (0%)</span>
           </div>
         </div>
       </section>
