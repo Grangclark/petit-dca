@@ -88,25 +88,44 @@ header h1 {
 .result-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px;
+  gap: 12px;
 }
 
 .result-item {
   background-color: #f7fafc;
-  padding: 12px;
+  padding: 14px 10px;
   border-radius: 8px;
   text-align: center;
+  border: 1px solid #edf2f7;
 }
 
 .result-label {
   display: block;
   font-size: 12px;
   color: #718096;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  font-weight: 500;
 }
 
 .result-value {
   font-size: 16px;
   font-weight: bold;
   color: #2d3748;
+}
+
+/* 👑【今日の一撃】プラス・マイナスの動的カラーハイライト */
+.profit-plus {
+  color: #10b981 !important; /* 鮮やかなエメラルドグリーン */
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+}
+
+.profit-minus {
+  color: #ef4444 !important; /* 鮮やかなレッド */
+  background-color: #fef2f2 !important;
+  border-color: #fecaca !important;
+}
+
+.profit-zero {
+  color: #6b7280 !important;
 }
