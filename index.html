@@ -17,6 +17,17 @@
       <!-- 入力フォームエリア -->
       <section class="card input-section">
         <h2>⚙️ 積立条件の設定</h2>
+
+        <!-- 👑【今日の一撃】クイックプリセットボタン群 -->
+        <div class="preset-group">
+          <span class="preset-label">⚡ クイック設定:</span>
+          <div class="preset-buttons">
+            <button type="button" class="btn-preset" data-amount="100" data-days="365">100円 × 1年</button>
+            <button type="button" class="btn-preset" data-amount="500" data-days="180">500円 × 半年</button>
+            <button type="button" class="btn-preset" data-amount="1000" data-days="30">1,000円 × 1ヶ月</button>
+          </div>
+        </div>
+
         <div class="form-group">
           <label for="dailyAmount">1日の購入額 (円):</label>
           <input type="number" id="dailyAmount" value="100" min="1">
@@ -29,8 +40,6 @@
           <label for="coinPrice">購入時の平均コイン価格 (円):</label>
           <input type="number" id="coinPrice" value="10000000" min="1">
         </div>
-
-        <!-- 👑【今日の一撃】現在の価格入力を追加 -->
         <div class="form-group">
           <label for="currentCoinPrice">現在のコイン価格 (円):</label>
           <input type="number" id="currentCoinPrice" value="15000000" min="1">
@@ -51,8 +60,6 @@
             <span class="result-label">推定獲得数量</span>
             <span id="totalCrypto" class="result-value">0 BTC</span>
           </div>
-
-          <!-- 👑【今日の一撃】評価額と損益の表示枠を追加 -->
           <div class="result-item">
             <span class="result-label">現在の評価額</span>
             <span id="currentValuation" class="result-value">¥0</span>

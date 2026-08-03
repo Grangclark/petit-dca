@@ -1,8 +1,26 @@
-// script.js
+// script.js (完全版)
 
 document.addEventListener("DOMContentLoaded", () => {
   const calcBtn = document.getElementById("calcBtn");
   calcBtn.addEventListener("click", calculateDCA);
+
+  // 👑【今日の一撃】プリセットボタンのイベントリスナー設定
+  const presetButtons = document.querySelectorAll(".btn-preset");
+  presetButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const amount = e.target.getAttribute("data-amount");
+      const days = e.target.getAttribute("data-days");
+
+      // フォームの値を更新
+      document.getElementById("dailyAmount").value = amount;
+      document.getElementById("days").value = days;
+
+      // 即時再計算を実行！
+      calculateDCA();
+    });
+  });
+
+  // 初回表示時の自動計算
   calculateDCA();
 });
 
@@ -25,11 +43,9 @@ function calculateDCA() {
   document.getElementById("totalCrypto").textContent = `${formatCrypto(totalCrypto)} BTC`;
   document.getElementById("currentValuation").textContent = `¥${Math.round(currentValuation).toLocaleString()}`;
   
-  // 👑【今日の一撃】損益結果エレメントのスタイルを動的にハイライト
   const pnlElement = document.getElementById("profitAndLoss");
-  const pnlContainer = pnlElement.parentElement; // 親のカード枠
+  const pnlContainer = pnlElement.parentElement;
 
-  // 既存のカラークラスを一旦削除
   pnlContainer.classList.remove("profit-plus", "profit-minus", "profit-zero");
 
   const pnlSign = profitAndLoss > 0 ? "+" : "";
@@ -38,7 +54,6 @@ function calculateDCA() {
   
   pnlElement.textContent = `${pnlSign}${formattedPnl} (${formattedMargin})`;
 
-  // 損益分岐による色分け判定
   if (profitAndLoss > 0) {
     pnlContainer.classList.add("profit-plus");
   } else if (profitAndLoss < 0) {
@@ -47,7 +62,7 @@ function calculateDCA() {
     pnlContainer.classList.add("profit-zero");
   }
 
-  console.log(`📊 シミュレーション完了: 損益ハイライト適用`);
+  console.log(`📊 シミュレーション完了: DCA計算実行`);
 }
 
 function formatCrypto(amount) {
